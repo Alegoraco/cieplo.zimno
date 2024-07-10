@@ -1,0 +1,79 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #87CEEB; /* kolor tła nieba */
+}
+
+#scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#sun {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.cloud {
+    position: absolute;
+    top: 20px;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    border-radius: 25px;
+    animation: moveCloudRightToLeft 10s infinite linear;
+}
+
+#cloud1 { left: 100%; }
+#cloud2 { left: -150px; animation-direction: alternate; animation-duration: 5s; }
+
+@keyframes moveCloudRightToLeft {
+    0% { left: 100%; }
+    100% { left: -150px; }
+}
+
+.person {
+    position: absolute;
+    bottom: 10px;
+    width: 50px;
+    height: 100px;
+    background-color: #F0F0F0;
+    text-align: center;
+    font-size: 12px;
+    animation: jump 5s infinite ease-in-out;
+}
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+#grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background-color: green;
+}
+
+/* Style poszczególnych postaci - dodaj różnice w ubraniu, włosach, itp. */
+#zofia, #kasia_s { height: 80px; } /* niższe postacie */
+#adam, #jacek, #damian, #mateusz_b, #bartek { background-color: darkblue; }
+#magda, #kasia_k { background-color: pink; }
+#dominik { background-color: orange; }
+#mateusz_p { background-color: grey; }
